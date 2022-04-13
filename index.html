@@ -42,17 +42,17 @@
         <article class="editor flex main-layout">
             <canvas id="canvas1" width="400" height="600"></canvas>
             <aside class="tools flex">
-                <input type="text">
+                <input class="input-txt" type="text" oninput="onTxtInput(value)" placeholder="Your Text">
                 <section class="manipulation-tools">
-                    <button class="btn move-up"></button>
-                    <button class="btn move-down"></button>
-                    <button class="btn switch"></button>
-                    <button class="btn add-txt"></button>
-                    <button class="btn delete"></button>
+                    <button class="btn move-up">Line Up</button>
+                    <button class="btn move-down">Line Down</button>
+                    <button class="btn switch">Switch Line</button>
+                    <button class="btn add-txt">Add Line</button>
+                    <button class="btn delete">Delete Line</button>
                 </section>
                 <section class="text-tools">
-                    <button></button>
-                    <button></button>
+                    <button onclick="onFontSize(value)" value="5">+ Size</button>
+                    <button onclick="onFontSize(value)" value="-5">- Size</button>
                     <button></button>
                     <button></button>
                     <button></button>
@@ -87,6 +87,7 @@
     <!-- controllers -->
     <script src="js/render.controller.js"></script>
     <script src="js/meme.controller.js"></script>
+    <script src="js/event-handler.controller.js"></script>
 </body>
 
 </html>

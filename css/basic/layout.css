@@ -15,6 +15,7 @@ nav.main {
 .main-layout {
     background-color: lightgray;
     width: 100%;
+    min-width: 900px;
     border-radius: 30px;
     padding: 20px;
 }

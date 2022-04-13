@@ -3,6 +3,7 @@
 let gImgs
 let gMeme
 
+//get
 function getImgs() {
     return gImgs
 }
@@ -12,9 +13,47 @@ function getMeme() {
 }
 
 function getImgById(id) {
-    return gImgs.find((img) => img.id === id )
+    return gImgs.find((img) => img.id === id)
 }
 
+function getMemeLine() {
+    if (!gMeme) return null
+    return gMeme.lines[gMeme.selectedLineIdx]
+}
+
+//set
+function setMeme(img) {
+    gMeme = {
+        selectedImg: img,
+        selectedLineIdx: 0,
+        lines: [
+            {
+                txt: 'Top Text',
+                size: 200,
+                x: 50,
+                y: 50
+            }
+        ]
+
+    }
+}
+
+function setLineTxt(txt) {
+    gMeme.lines[gMeme.selectedLineIdx].txt = txt
+}
+
+function setFontSize(val) {
+    const currSize = gMeme.lines[gMeme.selectedLineIdx].size
+    const newSize = currSize - Number(val)
+    gMeme.lines[gMeme.selectedLineIdx].size = newSize
+}
+
+//save
+function saveImgs() {
+    saveToStorage('memesDB', gImgs)
+}
+
+//make
 function makeImgs() {
     const imgs = loadFromStorage('imgsDB')
     if (!imgs) {
@@ -34,17 +73,6 @@ function makeImgs() {
         ]
         saveImgs()
     } else gImgs = imgs
-}
-
-function selectMeme(img) {
-    console.log(img);
-    gMeme = {
-
-    }
-}
-
-function saveImgs() {
-    saveToStorage('memesDB', gImgs)
 }
 
 function _createImg(keywords, url) {
