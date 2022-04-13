@@ -7,28 +7,32 @@ let gCtx
 function init() {
     gElCanvas = document.querySelector('#canvas1')
     gCtx = gElCanvas.getContext('2d')
-    makeMemes()
+    makeImgs()
     renderMemes()
     addListeners()
-    resizeCanvas()
-
 }
 
 function addListeners() {
     document.querySelectorAll('.gallery .item').forEach((el) => {
-        el.addEventListener('click', onMeme)
+        el.addEventListener('click', onImgSelect)
     })
     window.addEventListener('resize', () => {
         resizeCanvas()
     })
 }
-function onMeme() {
-    renderEditor()
+function onImgSelect() {
+    const id = this.dataset.id
+    const img = getImgById(id)
+    selectMeme(img)
+    toEditing()
+    renderEditor(this)
 }
 
+function toEditing() {
+    document.body.classList.add('editing')
+}
 
-function resizeCanvas() {
-    const elContainer = document.querySelector('.editor')
-    gElCanvas.width = elContainer.offsetWidth / 2
-    gElCanvas.height = elContainer.offsetHeight
+function toGallery() {
+    document.body.classList.remove('editing', 'about', 'memes')
+
 }

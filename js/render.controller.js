@@ -3,21 +3,32 @@
 
 function renderMemes() {
     const elGallery = document.querySelector('.gallery')
-    const memes = getMemes()
-    let injectionTxt = memes.map((meme) => {
-        return `<img class="item" src="${meme.url}" alt="">`
+    const imgs = getImgs()
+    let injectionTxt = imgs.map((img) => {
+        return `<img class="item" data-id="${img.id}" src="${img.url}" alt="">`
     })
     elGallery.innerHTML = injectionTxt.join('')
 }
 
+function resizeCanvas(img) {
+    let iHeight = img.height
+    let iWidth = img.width
+    const elContainer = document.querySelector('.editor')
+    gElCanvas.width = elContainer.offsetWidth
+    gElCanvas.height = (iHeight * elContainer.offsetWidth) / iWidth
+}
 
-
-
-
-
-
-function renderEditor(){
-    const elContainer = document.querySelector('main.content')
+function renderEditor(el) {
+    const elContainer = document.querySelector('.editor')
     let injectionTxt = ``
-    console.log('to editor')
+    drawImg(el.src)
+}
+
+function drawImg(url) {
+    var img = new Image();
+    img.src = url;
+    resizeCanvas(img)
+    img.onload = () => {
+        gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
+    };
 }

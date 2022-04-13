@@ -1,7 +1,10 @@
 nav.main {
     margin-block-end: 10px;
     justify-content: space-between;
-
+    background-color: lightcoral;
+    border-radius: 50px;
+    width: 100%;
+    padding-inline: 60px;
 }
 
 .nav-wrapper {
@@ -14,15 +17,17 @@ nav.main {
     text-align: center;
 }
 
-nav.main h1 {
+nav.main .logo {
+    width: 15rem;
     margin-block: auto;
     margin-inline: 5%;
+    cursor: pointer;
 
 }
 
 
 .nav-list li {
-    margin-inline-end: 10em;
+    margin-inline-end: 10%;
 }
 
 .nav-list li button {
