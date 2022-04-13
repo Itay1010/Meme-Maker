@@ -1,0 +1,26 @@
+header.main {
+    margin-block-end: 2rem;
+    justify-content: space-around;
+}
+
+header.main>* {
+    flex-grow: 1;
+    margin-inline: 3rem;
+}
+
+header.main .search {
+    width: 30rem;
+    border-radius: 50px;
+}
+
+.category-wrapper {
+    background-color: lightskyblue;
+    justify-content: space-between;
+    padding-inline: 2rem;
+    padding-block: 1rem;
+    border-radius: 50px;
+}
+
+header.main .more-btn {
+    border-radius: 50px;
+}

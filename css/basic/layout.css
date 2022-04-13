@@ -1,0 +1,39 @@
+main.container {
+    background-color: lightgoldenrodyellow;
+    width: 100vw;
+    padding: 10px;
+}
+
+nav.main {
+    background-color: lightcoral;
+    place-content: center center;
+    border-radius: 50px;
+    width: 100%;
+    padding-inline: 60px;
+}
+
+main.content {
+    background-color: lightgray;
+    width: 100%;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+article.gallery {
+    width: 100%;
+}
+
+
+/* editor */
+
+main .editor {
+    gap: 2rem;
+    padding: 2rem;
+    width: 100%;
+}
+
+.editor .tools {
+    background-color: lightblue;
+    flex-direction: column;
+    flex-grow: 1;
+}

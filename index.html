@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <title>MemeGen</title>
+</head>
+
+<body onload="init()">
+    <main class="container">
+        <nav class="main flex">
+            <h1>Logo</h1>
+            <section class="nav-wrapper">
+                <ul class="nav-list clean-list flex">
+                    <li><button class="">Gallery</button></li>
+                    <li><button class="">Memes</button></li>
+                    <li><button class="">About</button></li>
+                </ul>
+            </section>
+        </nav>
+
+        <main class="content">
+            <header class="main flex">
+                <input class="search" type="text">
+                <section class="category-wrapper flex">
+                    <a class="clean-links" href="">Funny</a>
+                    <a class="clean-links" href="">Animal</a>
+                    <a class="clean-links" href="">Men</a>
+                    <a class="clean-links" href="">Woman</a>
+                </section>
+                <button class="more-btn">More</button>
+            </header>
+            <article class="gallery grid">
+            </article>
+
+            <article class="editor flex" style="display: none;">
+                <canvas id="canvas1" width="400" height="600"></canvas>
+                <aside class="tools flex">
+                    <input type="text">
+                    <section class="manipulation-tools">
+                        <button class="btn move-up"></button>
+                        <button class="btn move-down"></button>
+                        <button class="btn switch"></button>
+                        <button class="btn add-txt"></button>
+                        <button class="btn delete"></button>
+                    </section>
+                    <section class="text-tools">
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <button></button>
+                        <select>
+                            <option value=""></option>
+                        </select>
+                        <button></button>
+                        <button></button>
+                    </section>
+                    <section class="emojis">
+                        <div class="carousel">
+
+                        </div>
+                    </section>
+                    <section class="export">
+                        <button class="btn share">Share</button>
+                        <button class="btn download">Download</button>
+                    </section>
+                </aside>
+            </article>
+        </main>
+
+    </main>
+
+    <footer class="main"></footer>
+
+    <!-- services -->
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/util.service.js"></script>
+    <script src="js/services/meme.service.js"></script>
+    
+    <!-- controllers -->
+    <script src="js/render.controller.js"></script>
+    <script src="js/meme.controller.js"></script>
+</body>
+
+</html>

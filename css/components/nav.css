@@ -1,0 +1,30 @@
+nav.main {
+    margin-block-end: 10px;
+    justify-content: space-between;
+
+}
+
+.nav-wrapper {
+    /* margin-inline-end: 30%; */
+    width: 50%;
+}
+
+.nav-list {
+    place-content: center center;
+    text-align: center;
+}
+
+nav.main h1 {
+    margin-block: auto;
+    margin-inline: 5%;
+
+}
+
+
+.nav-list li {
+    margin-inline-end: 10em;
+}
+
+.nav-list li button {
+    padding: 2em;
+}
