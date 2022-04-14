@@ -32,6 +32,7 @@ function addListeners() {
     document.querySelector('.text-tools .font-size-subtract').addEventListener('click', onFontSize)
     document.querySelector('.text-tools .font-color').addEventListener('input', onFontClr)
     window.addEventListener('resize', () => {
+        if(document.body.classList.length === 0 || !document.body.classList.includes('editing')) return
         let elImg = getElImgById(getMeme().selectedImg.id)
         resizeCanvas(elImg.width, elImg.height)
         reRenderCanvas()

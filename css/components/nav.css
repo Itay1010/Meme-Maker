@@ -18,7 +18,6 @@ nav.main {
 }
 
 nav.main .logo {
-    width: 15rem;
     margin-block: auto;
     margin-inline: 5%;
     cursor: pointer;
@@ -26,12 +25,8 @@ nav.main .logo {
 }
 
 
-.nav-list li {
-    margin-inline-end: 10%;
-}
 
 .nav-list li button {
-    font-size: 22px;
     font-family: poppins-medium;
     color: var(--clr-running);
     margin: 1em;

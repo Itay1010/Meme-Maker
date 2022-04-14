@@ -1,12 +1,11 @@
 @import 'setup/vars.css';
 @import 'setup/typography.css';
-/* @import 'setup/awesome.css'; */
 
 
 @import 'basic/basic.css';
 @import 'basic/helpers.css';
 @import 'basic/layout.css';
-/* @import 'basic/mq.css'; */
+@import 'basic/mq.css';
 
 
 @import 'components/nav.css';

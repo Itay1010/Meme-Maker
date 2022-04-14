@@ -4,9 +4,6 @@ header.main {
     align-items: center;
 }
 
-header.main>* {
-    margin-inline: 2.5rem;
-}
 
 header.main .search {
     flex-grow: 1;
@@ -27,15 +24,5 @@ header.main .search:focus-visible {
 .category-wrapper {
     background-color: var(--clr-secondary);
     justify-content: space-between;
-    flex-grow: 1;
-    padding-inline: 2rem;
-    padding-block: 1rem;
     border-radius: 50px;
-}
-
-header.main .more-btn {
-    background-image: var(--clr-primary);
-    border-radius: 50px;
-    height: 3.5em;
-    width: 7em;
 }
