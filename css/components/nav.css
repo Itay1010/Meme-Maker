@@ -1,20 +1,20 @@
 nav.main {
     margin-block-end: 10px;
     justify-content: space-between;
-    background-color: lightcoral;
+    background-image: var(--clr-primary);
     border-radius: 50px;
     width: 100%;
     padding-inline: 60px;
 }
 
 .nav-wrapper {
-    /* margin-inline-end: 30%; */
     width: 50%;
 }
 
 .nav-list {
     place-content: center center;
     text-align: center;
+    
 }
 
 nav.main .logo {
@@ -22,7 +22,7 @@ nav.main .logo {
     margin-block: auto;
     margin-inline: 5%;
     cursor: pointer;
-
+    
 }
 
 
@@ -31,5 +31,23 @@ nav.main .logo {
 }
 
 .nav-list li button {
-    padding: 2em;
+    font-size: 22px;
+    font-family: poppins-medium;
+    color: var(--clr-running);
+    margin: 1em;
+    padding-inline: 2em;
+    padding-block: .5em;
+    border-radius: 50px;
+}
+
+
+.nav-list li button:hover {
+    background-color: var(--clr-running);
+    color: var(--clr-highlight);
+    
+}
+
+body:not(.editing) .btn-gallery {
+    background-color: var(--clr-running);
+    color: var(--clr-highlight);
 }

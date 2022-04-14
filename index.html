@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon2.png" type="image/x-icon">
     <title>MemeGen</title>
 </head>
 
@@ -16,9 +17,9 @@
             <img src="/img/LOGO.png" class="logo" alt="">
             <section class="nav-wrapper">
                 <ul class="nav-list clean-list flex">
-                    <li><button class="">Gallery</button></li>
-                    <li><button class="">Memes</button></li>
-                    <li><button class="">About</button></li>
+                    <li><button class="btn-gallery">Gallery</button></li>
+                    <li><button class="btn-memes">Memes</button></li>
+                    <li><button class="btn-about">About</button></li>
                 </ul>
             </section>
         </nav>
@@ -40,7 +41,9 @@
         </section>
 
         <article class="editor flex main-layout">
-            <section class="canvas-container"><canvas id="canvas1" width="400" height="600"></canvas></section>
+            <section class="canvas-container">
+                <canvas id="canvas1" width="400" height="600"></canvas>
+            </section>
             <aside class="tools flex">
                 <input class="input-txt" type="text" oninput="onTxtInput(value)" placeholder="Your Text">
                 <section class="manipulation-tools">
@@ -50,21 +53,20 @@
                     <button class="btn add-line">Add Line</button>
                     <button class="btn delete">Delete Line</button>
                 </section>
-                <section class="text-tools">
+                <section class="text-tools flex">
                     <button class="font-size-add" value="10">+ Size</button>
                     <button class="font-size-subtract" value="-10">- Size</button>
                     <input class="font-color" type="color">
                     <button></button>
                     <button></button>
-                    <select>
-                        <option value=""></option>
+                    <select class="font-select">
+                        <option value="impact">Impact</option>
                     </select>
                     <button></button>
                     <button></button>
                 </section>
                 <section class="emojis">
                     <div class="carousel">
-
                     </div>
                 </section>
                 <section class="export">

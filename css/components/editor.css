@@ -1,7 +1,85 @@
 .editor {
-    height: 80vh;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: var(--clr-bg);
+    height: 85vh;
+    width: 100%;
+}
+
+
+body.editing main .editor {
+    display: flex;
 }
 
 .canvas-container {
+    display: flex;
+    place-content: center center;
+    background-color: var(--clr-bg-layer);
     width: 50%;
+    border-radius: 30px;
+}
+
+#canvas1{
+    border-radius: 30px;
+}
+
+
+
+.editor .tools {
+    background-color: var(--clr-bg-layer);
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 2em;
+    border-radius: 50px;
+    height: 100%;
+    text-align: center;
+}
+
+.tools .input-txt{
+    background-color: var(--clr-running);
+    font-size: 22px;
+    border-radius: 30px;
+    padding: 1em;
+    text-align: center;
+}
+
+.tools .input-txt:focus-visible {
+    outline: none;
+}
+
+.tools .manipulation-tools button{
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 1em;
+    margin-inline-end: 1em;
+    width: 5em;
+}
+
+.tools .text-tools {
+    background-color: var(--clr-highlight);
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 30px;
+    padding: 2em;
+}
+
+.text-tools .font-select {
+    padding: 0.5em;
+    border: none;
+    border-radius: 5px;
+}
+
+.text-tools .font-select:focus-visible {
+    outline: none;
+    
+}
+
+.tools .text-tools button {
+    background-color: var(--clr-running);
+    border-radius: 10px;
+    aspect-ratio: 1/1;
 }

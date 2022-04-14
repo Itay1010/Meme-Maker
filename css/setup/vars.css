@@ -1,0 +1,9 @@
+:root {
+    --clr-bg: rgba(34, 37, 44, 1);
+    --clr-bg-layer: #383B42;
+    --clr-secondary: #87898D;
+    --clr-running: #FEFEFE;
+    --clr-primary: linear-gradient(to right, #1E9CB2, #2CAD90, #39BB75) ;
+    --clr-highlight: #21AC91;
+
+}

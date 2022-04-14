@@ -3,7 +3,8 @@
 //canvas rendering
 function resizeCanvas(iHeight, iWidth) {
     const elContainer = document.querySelector('.canvas-container')
-    if(getMemeLine().x || getMemeLine().y) calcNewPos(elContainer, (iHeight * elContainer.offsetWidth) / iWidth)
+    const line = getMemeLine()
+    if(line && (line.x || line.y)) calcNewPos(elContainer, (iHeight * elContainer.offsetWidth) / iWidth)
     gElCanvas.width = elContainer.offsetWidth
     gElCanvas.height = (iHeight * elContainer.offsetWidth) / iWidth
 }

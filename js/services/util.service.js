@@ -14,10 +14,11 @@ function calcNewPos(elContainer, newH) {
     let { oldW, oldH } = { oldW: gElCanvas.width, oldH: gElCanvas.height }
     let diffW = elContainer.offsetWidth - oldW
     let diffH = newH - oldH
-    console.log(diffH)
     getMeme().lines.forEach((line) => {
-        line.x += diffW
-        line.y += diffH /2
+        if(line.x !== null) {
+            line.x += diffW
+            line.y += diffH /2
+        }
     })
 }
 

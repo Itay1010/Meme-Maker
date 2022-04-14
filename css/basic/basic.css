@@ -18,9 +18,21 @@ body {
     background-color: #f2f2f2;
     padding: 0;
     margin: 0;
+    font-family: poppins-regular, sans-serif;
+    color: var(--clr-running);
+}
+
+body::selection{
+    color: var(--clr-primary);
 }
 
 img {
     width: 100%;
     object-fit: contain;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }

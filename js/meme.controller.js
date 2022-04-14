@@ -13,6 +13,7 @@ function init() {
 
 function addListeners() {
     gElCanvas.addEventListener('click', () => { console.log(event.offsetX, event.offsetY) })
+    document.querySelector('.btn-gallery').addEventListener('click', toGallery)
     document.querySelectorAll('.gallery .item').forEach((el) => {
         el.addEventListener('click', onImgSelect)
     })

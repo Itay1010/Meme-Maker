@@ -1,45 +1,18 @@
 main.container {
-    background-color: lightgoldenrodyellow;
+    background-color: var(--clr-bg);
     max-width: 100vw;
     min-height: 100vh;
     padding: 10px;
 }
 
-body.editing main .content-container{
-    display: none;
-}
-
-nav.main {
-}
-
 .main-layout {
-    background-color: lightgray;
+    background-color: var(--clr-bg-layer);
     width: 100%;
     min-width: 900px;
     border-radius: 30px;
     padding: 20px;
 }
 
-article.gallery {
-    width: 100%;
-}
-
-
-/* editor */
-
-.editor {
+body.editing .content-container {
     display: none;
-    gap: 2rem;
-    padding: 2rem;
-    width: 100%;
-}
-
-body.editing main .editor {
-    display: flex;
-}
-
-.editor .tools {
-    background-color: lightblue;
-    flex-direction: column;
-    flex-grow: 1;
 }

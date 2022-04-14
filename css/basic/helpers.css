@@ -6,6 +6,12 @@
     display: grid;
 }
 
+.highlight {
+    background-color: var(--clr-running);
+    color: var(--clr-highlight);
+}
+
+
 .clean-list {
     list-style-type: none;
     margin: 0;
