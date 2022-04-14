@@ -59,3 +59,11 @@ function toEditing() {
 function toGallery() {
     document.body.classList.remove('editing', 'about', 'memes')
 }
+
+function openNavMenu() {
+    document.body.classList.add('nav-open')
+}
+
+function closeNavMenu() {
+    document.body.classList.remove('nav-open')
+}

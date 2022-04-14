@@ -19,11 +19,12 @@ h6 {
 }
 
 body {
-    background-color: #f2f2f2;
-    padding: 0;
-    margin: 0;
+    background-color: var(--clr-bg);
     font-family: poppins-regular, sans-serif;
     color: var(--clr-running);
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
 }
 
 body::selection{
@@ -43,4 +44,5 @@ button {
 
 footer {
     text-align: center;
+    height: 30px;
 }

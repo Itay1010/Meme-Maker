@@ -1,0 +1,15 @@
+.screen1 {
+    position: fixed;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.583);
+    z-index: 110;
+    pointer-events: none;
+}
+
+body.nav-open .screen1 {
+    display: initial;
+    pointer-events: all;
+    cursor: pointer;
+}

@@ -6,15 +6,12 @@ header.main {
 
 
 header.main .search {
-    flex-grow: 1;
     background-color: var(--clr-bg);
     color: var(--clr-running);
     border: none;
     border-radius: 50px;
     padding-inline: 1em;
     font-size: 1.37rem;
-    width: 30rem;
-    height: 2.5em;
 }
 
 header.main .search:focus-visible {

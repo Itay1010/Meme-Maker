@@ -18,8 +18,9 @@ function addListeners() {
         el.addEventListener('click', onImgSelect)
     })
 
-
     document.querySelector('.logo').addEventListener('click', toGallery)
+    document.querySelector('.btn-open-menu').addEventListener('click', openNavMenu)
+    document.querySelector('.screen1').addEventListener('click', closeNavMenu)
 
     //editor
     document.querySelector('.manipulation-tools button.move-up').addEventListener('click', onMoveLine)
@@ -32,7 +33,7 @@ function addListeners() {
     document.querySelector('.text-tools .font-size-subtract').addEventListener('click', onFontSize)
     document.querySelector('.text-tools .font-color').addEventListener('input', onFontClr)
     window.addEventListener('resize', () => {
-        if(document.body.classList.length === 0 || !document.body.classList.includes('editing')) return
+        if(document.body.classList.length === 0 || !document.body.classList.contains('editing')) return
         let elImg = getElImgById(getMeme().selectedImg.id)
         resizeCanvas(elImg.width, elImg.height)
         reRenderCanvas()

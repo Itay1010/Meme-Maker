@@ -12,13 +12,12 @@ nav.main {
 }
 
 .nav-list {
-    place-content: center center;
+    
     text-align: center;
     
 }
 
 nav.main .logo {
-    margin-block: auto;
     margin-inline: 5%;
     cursor: pointer;
     
