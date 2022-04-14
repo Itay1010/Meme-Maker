@@ -10,23 +10,52 @@ function onImgSelect() {
 }
 
 function onTxtInput(val) {
-    const url = getMeme().selectedImg.url
-    clearCanvas()
     setLineTxt(val)
-    drawImg(url)
+    reRenderCanvas()
 }
 
-function onFontSize(val) {
+//font
+function onFontSize(ev) {
+    const val = ev.currentTarget.value
     const currMeme = getMeme()
     setFontSize(val)
     drawImg(currMeme.selectedImg.url)
 }
 
+function onFontClr(){
+    setColor(this.value)
+    reRenderCanvas()
+}
+
+//lines
+function onMoveLine(ev) {
+    const val = ev.currentTarget.value
+    const url = getMeme().selectedImg.url
+    moveLine(val)
+    reRenderCanvas()
+}
+
+function onSwitchLine() {
+    nextLine()
+    reRenderCanvas()
+}
+
+function onAddLine() {
+    makeLine()
+    reRenderCanvas()
+}
+
+function onDeleteLine() {
+    deleteLine()
+    reRenderCanvas()
+}
+
+//paging
 function toEditing() {
     document.body.classList.add('editing')
+    document.querySelector('.tools .input-txt').value = ''
 }
 
 function toGallery() {
     document.body.classList.remove('editing', 'about', 'memes')
-
 }

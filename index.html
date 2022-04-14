@@ -13,7 +13,7 @@
 <body onload="init()">
     <main class="container">
         <nav class="main flex">
-            <img onclick="toGallery()" src="/img/LOGO.png" class="logo" alt="">
+            <img src="/img/LOGO.png" class="logo" alt="">
             <section class="nav-wrapper">
                 <ul class="nav-list clean-list flex">
                     <li><button class="">Gallery</button></li>
@@ -40,20 +40,20 @@
         </section>
 
         <article class="editor flex main-layout">
-            <canvas id="canvas1" width="400" height="600"></canvas>
+            <section class="canvas-container"><canvas id="canvas1" width="400" height="600"></canvas></section>
             <aside class="tools flex">
                 <input class="input-txt" type="text" oninput="onTxtInput(value)" placeholder="Your Text">
                 <section class="manipulation-tools">
-                    <button class="btn move-up">Line Up</button>
-                    <button class="btn move-down">Line Down</button>
+                    <button class="btn move-up" value="5">Line Up</button>
+                    <button class="btn move-down" value="-5">Line Down</button>
                     <button class="btn switch">Switch Line</button>
-                    <button class="btn add-txt">Add Line</button>
+                    <button class="btn add-line">Add Line</button>
                     <button class="btn delete">Delete Line</button>
                 </section>
                 <section class="text-tools">
-                    <button onclick="onFontSize(value)" value="5">+ Size</button>
-                    <button onclick="onFontSize(value)" value="-5">- Size</button>
-                    <button></button>
+                    <button class="font-size-add" value="10">+ Size</button>
+                    <button class="font-size-subtract" value="-10">- Size</button>
+                    <input class="font-color" type="color">
                     <button></button>
                     <button></button>
                     <select>

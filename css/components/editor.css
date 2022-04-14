@@ -1,3 +1,7 @@
 .editor {
     height: 80vh;
 }
+
+.canvas-container {
+    width: 50%;
+}

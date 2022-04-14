@@ -29,9 +29,19 @@ function setMeme(img) {
         lines: [
             {
                 txt: 'Top Text',
-                size: 200,
-                x: 50,
-                y: 50
+                font: 'impact',
+                size: 50,
+                color: 'black',
+                x: null,
+                y: null
+            },
+            {
+                txt: 'Bottom Text',
+                font: 'impact',
+                size: 50,
+                color: 'black',
+                x: null,
+                y: null
             }
         ]
 
@@ -45,7 +55,21 @@ function setLineTxt(txt) {
 function setFontSize(val) {
     const currSize = gMeme.lines[gMeme.selectedLineIdx].size
     const newSize = currSize - Number(val)
-    gMeme.lines[gMeme.selectedLineIdx].size = newSize
+    getMemeLine().size = newSize
+}
+
+function moveLine(val) {
+    const currPos = gMeme.lines[gMeme.selectedLineIdx].y
+    const newPos = currPos - Number(val)
+    getMemeLine().y = newPos
+}
+
+function nextLine() {
+    gMeme.selectedLineIdx = (gMeme.selectedLineIdx === gMeme.lines.length - 1) ? 0 : ++gMeme.selectedLineIdx
+}
+
+function setColor(clr) {
+    getMemeLine().color = clr
 }
 
 //save
@@ -54,6 +78,21 @@ function saveImgs() {
 }
 
 //make
+function makeLine() {
+    gMeme.lines.push({
+        txt: 'Text',
+        font: 'impact',
+        size: 50,
+        color: 'black',
+        x: null,
+        y: null
+    })
+}
+
+function deleteLine() {
+    gMeme.lines.splice(gMeme.selectedLineIdx, 1)
+}
+
 function makeImgs() {
     const imgs = loadFromStorage('imgsDB')
     if (!imgs) {
