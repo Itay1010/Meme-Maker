@@ -4,7 +4,7 @@
 function resizeCanvas(iHeight, iWidth) {
     const elContainer = document.querySelector('.canvas-container')
     const line = getMemeLine()
-    if(line && (line.x || line.y)) calcNewPos(elContainer, (iHeight * elContainer.offsetWidth) / iWidth)
+    // if(line && (line.x || line.y)) calcNewPos(elContainer, (iHeight * elContainer.offsetWidth) / iWidth)
     gElCanvas.width = elContainer.offsetWidth
     gElCanvas.height = (iHeight * elContainer.offsetWidth) / iWidth
 }
@@ -13,7 +13,6 @@ function reRenderCanvas() {
     const url = getMeme().selectedImg.url
     clearCanvas()
     drawImg(url)
-    drewLines()
 }
 
 //area rendering
@@ -27,10 +26,30 @@ function renderGallery() {
 }
 
 function renderEditor(el) {
-    const line = getMemeLine()
-    const elContainer = document.querySelector('.editor')
-    let injectionTxt = ``
     drawImg(el.src)
+}
+
+function renderSaved() {
+    const elGallery = document.querySelector('.saved-gallery')
+    const memes = getSavedMemes()
+    let injectionTxt
+    if (!memes) {
+        injectionTxt = [`You haven't saved any memes yet!`]
+
+    } else {
+        injectionTxt = memes.map((meme) => {
+            return `<li class="flex">
+            <img style="width: 3em; margin-inline-end: 20px; border-radius: 10px;"src="${meme.selectedImg.url}">
+            <button data-id="${meme.selectedImg.id}" class="saved-meme">Saved meme: ${meme.lines[0].txt}</button>
+            </li>`
+        })
+
+    }
+    elGallery.innerHTML = injectionTxt.join('')
+}
+
+function renderCategories() {
+
 }
 
 //draw on canvas
@@ -60,6 +79,7 @@ function drawImg(url) {
     let img = new Image();
     img.src = url;
     resizeCanvas(img.height, img.width)
+    //couldn't fix flickering issue do to onload delay, currently rendering naive
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
     drewLines()
 }
@@ -75,9 +95,14 @@ function drawText(line, isFocus = false) {
     gCtx.fillStyle = color;
     gCtx.font = `${line.size}px ${font}`;
     gCtx.fillText(txt, x, y);
-    if (isFocus) {
+    if (line.isStroke) {
+        gCtx.lineWidth = 2
+        gCtx.strokeStyle = line.strokeClr;
+        gCtx.strokeText(txt, x, y);
+    }
+    if (!getMeme().isExport && isFocus) {
         const txtMetrics = gCtx.measureText(txt)
-        const formatted = formatMetrics(txtMetrics, line)
+        const formatted = getTextDIM(txtMetrics, line)
         drawRect(...formatted)
     }
 }

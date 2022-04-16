@@ -6,3 +6,8 @@
     font-family: poppins-regular;
     src: url('../../fonts/Poppins-Regular.ttf');
   }
+
+  @font-face {
+    font-family: fa;
+    src: url('../../fonts/fa-solid-900.ttf');
+  }

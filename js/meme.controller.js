@@ -12,20 +12,31 @@ function init() {
 }
 
 function addListeners() {
-    gElCanvas.addEventListener('click', () => { console.log(event.offsetX, event.offsetY) })
-    document.querySelector('.btn-gallery').addEventListener('click', toGallery)
     document.querySelectorAll('.gallery .item').forEach((el) => {
         el.addEventListener('click', onImgSelect)
+        el.addEventListener('touchend', onImgSelect)
     })
 
-    document.querySelector('.logo').addEventListener('click', toGallery)
-    document.querySelector('.btn-open-menu').addEventListener('click', openNavMenu)
-    document.querySelector('.screen1').addEventListener('click', closeNavMenu)
+    //general
+    document.querySelector('.btn-gallery').addEventListener('click', toGallery)
+    document.querySelector('.random-btn').addEventListener('click', chooseRandom)
+
+    //exports
+    document.querySelector('.download').addEventListener('click', downloadCanvas)
+    document.querySelector('.btn-save').addEventListener('click', saveMeme)
+
+    // paging
+    addPagingListeners()
 
     //editor
-    document.querySelector('.manipulation-tools button.move-up').addEventListener('click', onMoveLine)
-    document.querySelector('.manipulation-tools button.move-down').addEventListener('click', onMoveLine)
-    document.querySelector('.manipulation-tools .btn.switch').addEventListener('click', onSwitchLine)
+    addEditorListeners()
+
+    //interaction
+    addMouseListeners()
+    addTouchListeners()
+}
+
+function addEditorListeners() {
     document.querySelector('.manipulation-tools .add-line').addEventListener('click', onAddLine)
     document.querySelector('.tools .btn.delete').addEventListener('click', onDeleteLine)
 
@@ -33,13 +44,40 @@ function addListeners() {
     document.querySelector('.text-tools .font-size-subtract').addEventListener('click', onFontSize)
     document.querySelector('.text-tools .font-color').addEventListener('input', onFontClr)
     window.addEventListener('resize', () => {
-        if(document.body.classList.length === 0 || !document.body.classList.contains('editing')) return
+        if (document.body.classList.length === 0 || !document.body.classList.contains('editing')) return
         let elImg = getElImgById(getMeme().selectedImg.id)
         resizeCanvas(elImg.width, elImg.height)
         reRenderCanvas()
     })
 }
 
+function addPagingListeners() {
+    document.querySelector('.logo').addEventListener('click', toGallery)
+    document.querySelector('.btn-memes').addEventListener('click', toMemes)
+    document.querySelector('.btn-about').addEventListener('click', toAbout)
+
+    document.querySelector('.btn-open-menu').addEventListener('click', openNavMenu)
+    document.querySelector('.screen1').addEventListener('click', closeNavMenu)
+
+}
+function addMouseListeners() {
+    gElCanvas.addEventListener('mousemove', onMove)
+    gElCanvas.addEventListener('mousedown', onDown)
+    gElCanvas.addEventListener('mouseup', onUp)
+}
+
+function addTouchListeners() {
+    gElCanvas.addEventListener('touchmove', onMove)
+    gElCanvas.addEventListener('touchstart', onDown)
+    gElCanvas.addEventListener('touchend', onUp)
+}
+
+function addSavedListeners() {
+    document.querySelectorAll('.saved-meme').forEach((el) => {
+        el.addEventListener('click', onLoadSaved)
+        el.addEventListener('touchend', onLoadSaved)
+    })
+}
 
 function getElImgById(id) {
     return document.querySelector(`.gallery .item[data-id="${id}"]`)

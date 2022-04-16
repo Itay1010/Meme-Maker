@@ -38,15 +38,32 @@
         transform: translateX(0);
     }
     /* header */
+    header.main {
+        gap: 15px;
+    }
     header.main .search {
-        width: 15rem;
+        width: 40%;
+        min-width: 90px;
         height: 2rem;
+        font-size: 16px;
     }
     .category-wrapper {
-        padding-inline: 1rem;
-        padding-block: 0.5rem;
-        width: 5rem;
+        padding: 0.5rem;
+        min-width: 5rem;
         overflow-x: hidden;
+        gap: 20px;
+    }
+    .more-btn {
+        background-image: var(--clr-primary);
+        border-radius: 50px;
+        height: 3em;
+        min-width: 5em;
+    }
+    .random-btn {
+        background-image: var(--clr-primary);
+        border-radius: 50px;
+        height: 3em;
+        width: 5em;
     }
     /* editor */
     .editor {
@@ -64,6 +81,19 @@
     }
     .tools {
         padding: 1em;
+        padding-inline: 0.5em;
+        width: 90%;
+    }
+    .text-tools {
+        padding: 1em;
+        gap: 1em;
+    }
+    .text-tools .font-size-add {
+    
+    }
+    .tools .export {
+        justify-content: space-around;
+        padding-inline: 2rem;
     }
 }
 
@@ -76,37 +106,10 @@
         width: 10rem;
         margin-block: 0.5rem;
     }
-    .nav-list {
-        position: fixed;
-        flex-direction: column;
-        place-content: center flex-start;
-        background-image: var(--clr-primary);
-        height: 100vh;
-        top: 0;
-        right: 0;
-        transform: translateX(100%);
-        z-index: 120;
-    }
-    .nav-list>* {
-        margin-block-start: 5rem;
-        margin-inline: 8rem;
-    }
-    .btn-open-menu {
-        position: relative;
-        display: inline-block;
-        background-color: #afe1d7;
-        border-radius: 50%;
-        width: 2rem;
-        height: 2rem;
-        margin-block: auto;
-    }
-    .btn-open-menu::before {
-        content: '☰';
-    }
-    body.nav-open .nav-list {
-        transform: translateX(0);
-    }
     /* header */
+    header.main {
+        gap: 15px;
+    }
     header.main .more-btn {
         background-image: var(--clr-primary);
         border-radius: 50px;
@@ -114,22 +117,29 @@
         width: 7em;
     }
     header.main .search {
-        max-width: 30rem;
-        flex-grow: 1;
+        font-size: 1.37rem;
         height: 2.5em;
     }
     .category-wrapper {
         padding-inline: 1rem;
         padding-block: 0.5rem;
-        width: 5rem;
+        flex-grow: 1;
         overflow-x: hidden;
+        gap: 20px;
+    }
+    
+    .random-btn {
+        background-image: var(--clr-primary);
+        border-radius: 50px;
+        height: 3em;
+        width: 5em;
     }
     /* editor */
     .editor {
         flex-direction: row;
         gap: 1em;
         padding: 2rem;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: initial;
     }
     .canvas-container {
@@ -138,15 +148,15 @@
     .tools {
         place-content: center center;
         padding: 2em;
-        height: 60%;
-        flex-grow: 0.5;
+        flex-grow: 1;
     }
     .tools .input-txt {
         padding: 0.5em;
     }
     .text-tools {
         gap: 0.5em;
-        max-width: 20em;
+        max-width: 100%;
+        padding: 2em;
     }
     .manipulation-tools button {
         padding: 0.5em;
@@ -203,54 +213,19 @@
         gap: initial;
         place-content: center center;
         height: 70%;
-        flex-grow: 0.5;
     }
     .text-tools {
         gap: 0.5em;
-        width: 25em;
+        width: 95%;
+        padding: 2em;
+        justify-content: center;
     }
-    .tools .input-txt {
-        padding: 0.5em;
+    .input-txt {
+        width: 90%;
     }
-
     .manipulation-tools button {
         padding: 0.5em;
         margin-inline-end: 0.5em;
         width: 4em;
-    }
-}
-
-@media (min-width: 1124px) {
-    /* nav */
-    .nav-list li {
-        margin-inline-end: 5%;
-    }
-    .nav-list li button {
-        font-size: 22px;
-        font-family: poppins-medium;
-        color: var(--clr-running);
-        margin: 1em;
-        padding-inline: 2em;
-        padding-block: .5em;
-        border-radius: 50px;
-    }
-    nav.main .logo {
-        width: 15rem;
-    }
-    .category-wrapper {
-        min-width: 20rem;
-        padding-inline: 2rem;
-        padding-block: 1rem;
-    }
-    /* header */
-    header.main>* {
-        margin-inline: 2.5rem;
-    }
-
-    /* editor */
-    .manipulation-tools button {
-        padding: 1em;
-        margin-inline-end: 1em;
-        width: 5em;
     }
 }

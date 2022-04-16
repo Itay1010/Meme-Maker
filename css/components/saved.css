@@ -1,0 +1,18 @@
+.saved-gallery {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-block: 50px;
+}
+
+body.memes .saved-gallery {
+    display: flex;
+}
+
+.saved-meme {
+    background-image: var(--clr-primary);
+    padding-inline: 2rem;
+    padding-block: 1rem;
+    border-radius: 10px;
+}

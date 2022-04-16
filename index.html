@@ -36,6 +36,7 @@
                         <a class="clean-links" href="">Woman</a>
                     </section>
                     <button class="more-btn">More</button>
+                    <button class="random-btn">I'm Flexible</button>
                 </header>
                 <article class="gallery grid">
                 </article>
@@ -49,39 +50,44 @@
             <aside class="tools flex">
                 <input class="input-txt" type="text" oninput="onTxtInput(value)" placeholder="Your Text">
                 <section class="manipulation-tools">
-                    <button class="btn move-up" value="5">Line Up</button>
-                    <button class="btn move-down" value="-5">Line Down</button>
-                    <button class="btn switch">Switch Line</button>
-                    <button class="btn add-line">Add Line</button>
-                    <button class="btn delete">Delete Line</button>
+                    <button class="btn add-line"></button>
+                    <button class="btn delete"></button>
                 </section>
                 <section class="text-tools flex">
-                    <button class="font-size-add" value="10">+ Size</button>
-                    <button class="font-size-subtract" value="-10">- Size</button>
-                    <input class="font-color" type="color">
-                    <button></button>
-                    <button></button>
+                    <button class="font-size-add" value="10">A+</button>
+                    <button class="font-size-subtract" value="-10">A-</button>
+                    <button class="color-btn">
+                        <input class="font-color" type="color">
+                    </button>
+                    <button class="outline-btn">
+                        <input class="outline-color" type="color">
+                    </button>
                     <select class="font-select">
                         <option value="impact">Impact</option>
                     </select>
-                    <button></button>
-                    <button></button>
                 </section>
                 <section class="emojis">
                     <div class="carousel">
+
                     </div>
                 </section>
-                <section class="export">
-                    <button class="btn share">Share</button>
-                    <button class="btn download">Download</button>
+                <section class="export flex">
+                    <button class="btn-save">save</button>
+                    <a class="download">Download</a>
+                    <button class="btn-share">Share</button>
                 </section>
             </aside>
         </article>
 
-        
-        
+        <article>
+            <ul class="saved-gallery clean-list flex">
+
+            </ul>
+        </article>
+
+
         <footer class="main">
-            <p>CoffeRight © Itay Zonshine - 2022</p>
+            <p>CoffeeRight © Itay Zonshine - 2022</p>
         </footer>
     </main>
 

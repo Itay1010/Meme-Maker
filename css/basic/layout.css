@@ -9,11 +9,18 @@ main.container {
 .main-layout {
     background-color: var(--clr-bg-layer);
     width: 100%;
-    /* min-width: 900px; */
     border-radius: 30px;
     padding: 20px;
 }
 
 body.editing .content-container {
+    display: none;
+}
+
+body.memes .content-container {
+    display: none;
+}
+
+body.about .content-container {
     display: none;
 }

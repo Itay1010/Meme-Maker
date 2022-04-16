@@ -12,18 +12,13 @@ nav.main {
 }
 
 .nav-list {
-    
     text-align: center;
-    
 }
 
 nav.main .logo {
     margin-inline: 5%;
     cursor: pointer;
-    
 }
-
-
 
 .nav-list li button {
     font-family: poppins-medium;
@@ -34,14 +29,22 @@ nav.main .logo {
     border-radius: 50px;
 }
 
-
 .nav-list li button:hover {
     background-color: var(--clr-running);
     color: var(--clr-highlight);
-    
 }
 
-body:not(.editing) .btn-gallery {
+body:not(.editing, .memes, .about) .btn-gallery {
+    background-color: var(--clr-running);
+    color: var(--clr-highlight);
+}
+
+body.memes .btn-memes {
+    background-color: var(--clr-running);
+    color: var(--clr-highlight);
+}
+
+body.about .btn-about {
     background-color: var(--clr-running);
     color: var(--clr-highlight);
 }
