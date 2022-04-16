@@ -13,11 +13,9 @@ function init() {
 }
 
 function addListeners() {
+    
     //Images
-    document.querySelectorAll('.gallery .item').forEach((el) => {
-        el.addEventListener('click', onImgSelect)
-        el.addEventListener('touchend', onImgSelect)
-    })
+    addGalleryListeners()
 
     //general
     document.querySelector('.btn-gallery').addEventListener('click', toGallery)
@@ -63,6 +61,13 @@ function addEditorListeners() {
         let elImg = getElImgById(getMeme().selectedImg.id)
         resizeCanvas(elImg.width, elImg.height)
         reRenderCanvas()
+    })
+}
+
+function addGalleryListeners() {
+    document.querySelectorAll('.gallery .item').forEach((el) => {
+        el.addEventListener('click', onImgSelect)
+        el.addEventListener('touchend', onImgSelect)
     })
 }
 

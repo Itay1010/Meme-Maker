@@ -21,6 +21,7 @@ function onFilter(ev) {
     const val = ev.target.value.toLowerCase()
     if (getCat().includes(val) || val === '') setFilter(val)
     renderGallery()
+    addGalleryListeners()
 }
 
 function chooseRandom() {
