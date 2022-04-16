@@ -46,11 +46,14 @@ function renderCatList() {
     elDataList.innerHTML = injectionTxt
 }
 
+function renderCarousel() {
+    
+}
+
 //canvas rendering
 function resizeCanvas(iHeight, iWidth) {
     const elContainer = document.querySelector('.canvas-container')
     const line = getMemeLine()
-    // if(line && (line.x || line.y)) calcNewPos(elContainer, (iHeight * elContainer.offsetWidth) / iWidth)
     gElCanvas.width = elContainer.offsetWidth
     gElCanvas.height = (iHeight * elContainer.offsetWidth) / iWidth
 }
@@ -103,7 +106,7 @@ function drawText(line, isFocus = false) {
     gCtx.textBaseline = 'middle';
     gCtx.textAlign = 'center';
     gCtx.fillStyle = color;
-    gCtx.font = `${line.size}px ${font}`;
+    gCtx.font = `${line.size}px ${font}, san-serif`;
     gCtx.fillText(txt, x, y);
     if (line.isStroke) {
         gCtx.lineWidth = 2

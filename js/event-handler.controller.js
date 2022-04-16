@@ -25,7 +25,6 @@ function onFilter(ev) {
 
 function chooseRandom() {
     const img = getRandomImg()
-    console.log('img', img)
     const elImg = document.querySelector(`.gallery .item[data-id="${img.id}"]`)
     loadMeme(img.id)
     setRandomLines()
@@ -79,7 +78,7 @@ function onFontOutline() {
 }
 
 function onFontSelect() {
-    setFontSize(this.value)
+    setFontType(this.value)
     reRenderCanvas()
 }
 
@@ -99,6 +98,12 @@ function onAddLine() {
     let txt = document.querySelector('.input-txt').value
     if (!txt) txt = 'Text'
     makeLine(txt)
+    reRenderCanvas()
+}
+
+function onEmoji() {
+    const emoji = this.value
+    makeLine(emoji)
     reRenderCanvas()
 }
 
@@ -140,6 +145,14 @@ function openNavMenu() {
 
 function closeNavMenu() {
     document.body.classList.remove('nav-open')
+}
+
+function openModal() {
+    document.body.classList.add('modal1-open')
+}
+
+function closeModal() {
+    document.body.classList.remove('modal1-open')
 }
 
 //canvas interaction

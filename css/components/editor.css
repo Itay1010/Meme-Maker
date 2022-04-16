@@ -24,7 +24,7 @@ body.editing main .editor {
 .editor .tools {
     background-color: var(--clr-bg-layer);
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     border-radius: 50px;
     text-align: center;
@@ -43,12 +43,19 @@ body.editing main .editor {
 }
 
 .tools .manipulation-tools button {
-    background-color: #fff;
     border-radius: 8px;
     padding: 15px;
     margin-block: auto;
+    box-shadow: inset 0 -4px 0px rgb(0 0 0 / 37%);
 }
+.add-line {
+    background-color: var(--clr-highlight2);
+    
+}
+.delete {
+    background-color: var(--clr-highlight3);
 
+}
 .manipulation-tools .add-line::before {
     font-family: fa;
     content: '+';
@@ -62,6 +69,7 @@ body.editing main .editor {
 .tools .text-tools {
     background-color: var(--clr-highlight);
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     border-radius: 30px;
 }
@@ -142,21 +150,40 @@ body.editing main .editor {
 }
 
 .emojis {
-    background-color: #fff;
+    background-color: var(--clr-running);
+    border-radius: 30px;
+    padding: 6px;
 }
-
+.carousel {
+    align-items: center;
+}
+.carousel>* {
+    cursor: pointer;
+}
 .export {
     justify-content: space-between;
     width: 100%;
 }
 
-.export button {
-    background-color: #fff;
-    border-radius: 5px;
+.export>* {
+    border-radius: 8px;
+    box-shadow: inset 0px 3px 0px rgb(255 255 255 / 30%);
+}
+
+.btn-save{
+    background-color: var(--clr-highlight2);
+    
+}
+
+.btn-save::before {
+    font-family: fa;
+    content: '\f0ee';
+    position: relative;
+    padding-inline-end: 5px;
 }
 
 .download {
-    background-color: #fff;
+    background-color: var(--clr-highlight2);
     color: black;
     padding: 0.5em;
     padding-inline: 0.5em;
@@ -164,6 +191,21 @@ body.editing main .editor {
     cursor: pointer;
 }
 
-.btn-save {}
+.download::before {
+    font-family: fa;
+    content: '\f019';
+    position: relative;
+    padding-inline-end: 5px;
+}
 
-.btn-share {}
+.btn-share {
+    background-color: var(--clr-highlight4);
+
+}
+
+.btn-share::before{
+    font-family: fa;
+    content: '\f1e0';
+    position: relative;
+    padding-inline-end: 5px;
+}

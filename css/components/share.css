@@ -1,0 +1,22 @@
+.share-modal {
+    position: fixed;
+    transition: right 0.3s;
+    right: -135%;
+    top: 20vh;
+    transform: translateX(50%);
+    background-color: var(--clr-bg-layer);
+    border-radius: 20px;
+    text-align: center;
+    padding: 30px;
+}
+
+body.modal1-open .share-modal {
+    right: 50%;
+}
+
+.close-modal1 {
+    background-image: var(--clr-primary);
+    padding: 6px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}

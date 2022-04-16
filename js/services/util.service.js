@@ -10,20 +10,6 @@ function getTextDIM(metrics, line) {
     return [startX, startY, racW, racH]
 }
 
-
-function calcNewPos(elContainer, newH) {
-    let { oldW, oldH } = { oldW: gElCanvas.width, oldH: gElCanvas.height }
-    let diffW = elContainer.offsetWidth - oldW
-    let diffH = newH - oldH
-    getMeme().lines.forEach((line) => {
-        if (line.x !== null) {
-            line.x += diffW
-            line.y += diffH / 2
-        }
-    })
-}
-
-
 function getEvPos(ev) {
     var pos = {
         x: ev.offsetX,

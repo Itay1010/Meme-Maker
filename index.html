@@ -30,7 +30,7 @@
         <section class="content-container">
             <main class="content main-layout">
                 <header class="main flex">
-                    
+
                     <input class="search" type="text" placeholder="Search" list="categoriesList">
                     <section class="category-wrapper flex">
                         <button class="clean-links category-btn" value="happy">Happy</button>
@@ -71,10 +71,13 @@
                         <option value="Times New Roman">timesNRoman</option>
                     </select>
                 </section>
-                <section class="emojis">
-                    <div class="carousel">
-
-                    </div>
+                <section class="emojis flex">
+                    <ul class="carousel clean-list flex">
+                        <li><button value="😀">😀</button></li>
+                        <li><button value="😊">😊</button></li>
+                        <li><button value="😎">😎</button></li>
+                        <li><button value="😥">😥</button></li>
+                    </ul>
                 </section>
                 <section class="export flex">
                     <button class="btn-save">save</button>
@@ -85,19 +88,25 @@
         </article>
 
         <article>
-            <ul class="saved-gallery clean-list flex">
-
+            <ul class="saved-gallery clean-list flex"></ul>
             </ul>
         </article>
 
-
+        
         <footer class="main">
             <p>CoffeeRight © Itay Zonshine - 2022</p>
         </footer>
     </main>
 
+    <div class="share-modal">
+        <button class="close-modal1">X</button>
+        <p></p>
+        <span></span>
+    </div>
+    
     <!-- services -->
     <script src="js/services/storage.service.js"></script>
+    <script src="js/services/upload.service.js"></script>
     <script src="js/services/util.service.js"></script>
     <script src="js/services/meme.service.js"></script>
 

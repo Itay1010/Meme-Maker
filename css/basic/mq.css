@@ -2,6 +2,9 @@
 
 @media (max-width: 768px) {
     /* nav */
+    nav.main {
+        align-items: center;
+    }
     nav.main .logo {
         width: 10rem;
         margin-block: 0.5rem;
@@ -27,9 +30,8 @@
         display: inline-block;
         background-color: #afe1d7;
         border-radius: 50%;
-        width: 2rem;
-        height: 2rem;
-        margin-block: auto;
+        width: 30px;
+        height: 30px;
     }
     .btn-open-menu::before {
         content: '☰';
@@ -40,9 +42,11 @@
     /* header */
     header.main {
         gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     header.main .search {
-        width: 40%;
+        width: 90%;
         min-width: 90px;
         height: 2rem;
         font-size: 16px;
@@ -113,12 +117,12 @@
     header.main .more-btn {
         background-image: var(--clr-primary);
         border-radius: 50px;
-        height: 3.5em;
+        height: 40px;
         width: 7em;
     }
     header.main .search {
         font-size: 1.37rem;
-        height: 2.5em;
+        height: 40px;
     }
     .category-wrapper {
         padding-inline: 1rem;
@@ -197,6 +201,9 @@
     header.main>* {
         margin-inline: 1rem;
     }
+    header.main .search {
+        height: 50px;
+    }
     .category-wrapper {
         min-width: 20rem;
         padding-inline: 2rem;
@@ -211,14 +218,12 @@
     /* editing */
     .editor .tools {
         gap: initial;
-        place-content: center center;
         height: 70%;
     }
     .text-tools {
         gap: 0.5em;
         width: 95%;
         padding: 2em;
-        justify-content: center;
     }
     .input-txt {
         width: 90%;

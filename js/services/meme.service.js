@@ -115,7 +115,7 @@ function setOutline(clr) {
     getMemeLine().strokeClr = clr
 }
 
-function setFontSize(font) {
+function setFontType(font) {
     getMemeLine().font = font
 
 }

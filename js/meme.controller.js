@@ -8,7 +8,7 @@ function init() {
     gCtx = gElCanvas.getContext('2d')
     makeImgs()
     renderGallery()
-    renderCatList() 
+    renderCatList()
     addListeners()
 }
 
@@ -25,16 +25,16 @@ function addListeners() {
     document.querySelector('.search').addEventListener('input', onFilter)
     document.querySelectorAll('.category-btn').forEach((el) => {
         el.addEventListener('click', onFilter)
-    }) 
+    })
 
     //exports
-    
+
     // paging
     addPagingListeners()
-    
+
     //editor
     addEditorListeners()
-    
+
     //interaction
     addMouseListeners()
     addTouchListeners()
@@ -43,22 +43,27 @@ function addListeners() {
 function addEditorListeners() {
     document.querySelector('.manipulation-tools .add-line').addEventListener('click', onAddLine)
     document.querySelector('.tools .btn.delete').addEventListener('click', onDeleteLine)
-    
+
     document.querySelector('.text-tools .font-size-add').addEventListener('click', onFontSize)
     document.querySelector('.text-tools .font-size-subtract').addEventListener('click', onFontSize)
     document.querySelector('.text-tools .font-color').addEventListener('input', onFontClr)
     document.querySelector('.outline-color').addEventListener('input', onFontOutline)
     document.querySelector('.font-select').addEventListener('change', onFontSelect)
+    document.querySelectorAll('.carousel>* button').forEach((li) => {
+        li.addEventListener('click', onEmoji)
+    })
+
+    document.querySelector('.btn-save').addEventListener('click', saveMeme)
+    document.querySelector('.download').addEventListener('click', downloadCanvas)
+    document.querySelector('.btn-share').addEventListener('click', uploadImg)
+    document.querySelector('.close-modal1').addEventListener('click', closeModal)
+
     window.addEventListener('resize', () => {
         if (document.body.classList.length === 0 || !document.body.classList.contains('editing')) return
         let elImg = getElImgById(getMeme().selectedImg.id)
         resizeCanvas(elImg.width, elImg.height)
         reRenderCanvas()
     })
-
-    document.querySelector('.download').addEventListener('click', downloadCanvas)
-    document.querySelector('.btn-save').addEventListener('click', saveMeme)
-    
 }
 
 function addPagingListeners() {
