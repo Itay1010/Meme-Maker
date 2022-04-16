@@ -17,6 +17,6 @@ header.main .search:focus-visible {
 
 .category-wrapper {
     background-color: var(--clr-secondary);
-    justify-content: space-between;
+    justify-content: space-evenly;
     border-radius: 50px;
 }

@@ -1,20 +1,5 @@
 'use strict'
 
-//canvas rendering
-function resizeCanvas(iHeight, iWidth) {
-    const elContainer = document.querySelector('.canvas-container')
-    const line = getMemeLine()
-    // if(line && (line.x || line.y)) calcNewPos(elContainer, (iHeight * elContainer.offsetWidth) / iWidth)
-    gElCanvas.width = elContainer.offsetWidth
-    gElCanvas.height = (iHeight * elContainer.offsetWidth) / iWidth
-}
-
-function reRenderCanvas() {
-    const url = getMeme().selectedImg.url
-    clearCanvas()
-    drawImg(url)
-}
-
 //area rendering
 function renderGallery() {
     const elGallery = document.querySelector('.gallery')
@@ -35,7 +20,7 @@ function renderSaved() {
     let injectionTxt
     if (!memes) {
         injectionTxt = [`You haven't saved any memes yet!`]
-
+        
     } else {
         injectionTxt = memes.map((meme) => {
             return `<li class="flex">
@@ -43,13 +28,37 @@ function renderSaved() {
             <button data-id="${meme.selectedImg.id}" class="saved-meme">Saved meme: ${meme.lines[0].txt}</button>
             </li>`
         })
-
+        
     }
     elGallery.innerHTML = injectionTxt.join('')
 }
 
 function renderCategories() {
+}
+function renderCatList() {
+    const elDataList = document.querySelector('#categoriesList')
+    let injectionTxt = `` 
+    getCat().forEach((category) => {
+        injectionTxt += `
+        <option value="${category.charAt(0).toUpperCase() + category.slice(1)}"  />
+        `
+    })
+    elDataList.innerHTML = injectionTxt
+}
 
+//canvas rendering
+function resizeCanvas(iHeight, iWidth) {
+    const elContainer = document.querySelector('.canvas-container')
+    const line = getMemeLine()
+    // if(line && (line.x || line.y)) calcNewPos(elContainer, (iHeight * elContainer.offsetWidth) / iWidth)
+    gElCanvas.width = elContainer.offsetWidth
+    gElCanvas.height = (iHeight * elContainer.offsetWidth) / iWidth
+}
+
+function reRenderCanvas() {
+    const url = getMeme().selectedImg.url
+    clearCanvas()
+    drawImg(url)
 }
 
 //draw on canvas
@@ -63,8 +72,8 @@ function drewLines() {
                 case 0:
                     line.y = line.size / 2
                     break;
-                case 1:
-                    line.y = gElCanvas.height - line.size / 2
+                    case 1:
+                        line.y = gElCanvas.height - line.size / 2
                     break;
                 default:
                     line.y = gElCanvas.height / 2
@@ -90,6 +99,7 @@ function drawText(line, isFocus = false) {
     const y = line.y
     const color = line.color
     const font = line.font
+    const meme = getMeme()
     gCtx.textBaseline = 'middle';
     gCtx.textAlign = 'center';
     gCtx.fillStyle = color;
@@ -100,7 +110,7 @@ function drawText(line, isFocus = false) {
         gCtx.strokeStyle = line.strokeClr;
         gCtx.strokeText(txt, x, y);
     }
-    if (!getMeme().isExport && isFocus) {
+    if (!meme.isExport && isFocus) {
         const txtMetrics = gCtx.measureText(txt)
         const formatted = getTextDIM(txtMetrics, line)
         drawRect(...formatted)

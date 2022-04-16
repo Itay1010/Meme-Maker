@@ -2,6 +2,7 @@
 
 const gTouchEvs = ['touchstart', 'touchmove', 'touchend']
 
+//general
 function onImgSelect() {
     const id = this.dataset.id
     loadMeme(id, event)
@@ -14,6 +15,12 @@ function onLoadSaved() {
     updateMeme(meme)
     toEditing()
     drawImg(meme.selectedImg.url)
+}
+
+function onFilter(ev) {
+    const val = ev.target.value.toLowerCase()
+    if (getCat().includes(val) || val === '') setFilter(val)
+    renderGallery()
 }
 
 function chooseRandom() {
@@ -41,15 +48,16 @@ function onTxtInput(val) {
 
 
 function downloadCanvas() {
+    const meme = getMeme()
+    meme.isExport = true
+    reRenderCanvas()
+
     const elLink = this
     const data = gElCanvas.toDataURL()
-    getMeme().isExport = true
-    reRenderCanvas()
     elLink.href = data
     elLink.download = 'Meme.jpg'
-    setTimeout(() => {
-        getMeme().isExport = false
-    }, 1000);
+    meme.isExport = false
+    reRenderCanvas()
 }
 
 //font
@@ -62,6 +70,16 @@ function onFontSize(ev) {
 
 function onFontClr() {
     setColor(this.value)
+    reRenderCanvas()
+}
+
+function onFontOutline() {
+    setOutline(this.value)
+    reRenderCanvas()
+}
+
+function onFontSelect() {
+    setFontSize(this.value)
     reRenderCanvas()
 }
 
@@ -78,7 +96,9 @@ function onSwitchLine() {
 }
 
 function onAddLine() {
-    makeLine()
+    let txt = document.querySelector('.input-txt').value
+    if (!txt) txt = 'Text'
+    makeLine(txt)
     reRenderCanvas()
 }
 

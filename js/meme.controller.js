@@ -8,10 +8,12 @@ function init() {
     gCtx = gElCanvas.getContext('2d')
     makeImgs()
     renderGallery()
+    renderCatList() 
     addListeners()
 }
 
 function addListeners() {
+    //Images
     document.querySelectorAll('.gallery .item').forEach((el) => {
         el.addEventListener('click', onImgSelect)
         el.addEventListener('touchend', onImgSelect)
@@ -20,17 +22,19 @@ function addListeners() {
     //general
     document.querySelector('.btn-gallery').addEventListener('click', toGallery)
     document.querySelector('.random-btn').addEventListener('click', chooseRandom)
+    document.querySelector('.search').addEventListener('input', onFilter)
+    document.querySelectorAll('.category-btn').forEach((el) => {
+        el.addEventListener('click', onFilter)
+    }) 
 
     //exports
-    document.querySelector('.download').addEventListener('click', downloadCanvas)
-    document.querySelector('.btn-save').addEventListener('click', saveMeme)
-
+    
     // paging
     addPagingListeners()
-
+    
     //editor
     addEditorListeners()
-
+    
     //interaction
     addMouseListeners()
     addTouchListeners()
@@ -39,16 +43,22 @@ function addListeners() {
 function addEditorListeners() {
     document.querySelector('.manipulation-tools .add-line').addEventListener('click', onAddLine)
     document.querySelector('.tools .btn.delete').addEventListener('click', onDeleteLine)
-
+    
     document.querySelector('.text-tools .font-size-add').addEventListener('click', onFontSize)
     document.querySelector('.text-tools .font-size-subtract').addEventListener('click', onFontSize)
     document.querySelector('.text-tools .font-color').addEventListener('input', onFontClr)
+    document.querySelector('.outline-color').addEventListener('input', onFontOutline)
+    document.querySelector('.font-select').addEventListener('change', onFontSelect)
     window.addEventListener('resize', () => {
         if (document.body.classList.length === 0 || !document.body.classList.contains('editing')) return
         let elImg = getElImgById(getMeme().selectedImg.id)
         resizeCanvas(elImg.width, elImg.height)
         reRenderCanvas()
     })
+
+    document.querySelector('.download').addEventListener('click', downloadCanvas)
+    document.querySelector('.btn-save').addEventListener('click', saveMeme)
+    
 }
 
 function addPagingListeners() {

@@ -12,10 +12,12 @@
 </head>
 
 <body onload="init()">
+    <datalist id="categoriesList">
+    </datalist>
     <div class="screen1"></div>
     <main class="container">
         <nav class="main flex">
-            <img src="/img/LOGO.png" class="logo" alt="">
+            <img src="img/LOGO.png" class="logo" alt="">
             <section class="nav-wrapper">
                 <ul class="nav-list clean-list flex">
                     <li><button class="btn-gallery">Gallery</button></li>
@@ -28,12 +30,12 @@
         <section class="content-container">
             <main class="content main-layout">
                 <header class="main flex">
-                    <input class="search" type="text" placeholder="Search">
+                    
+                    <input class="search" type="text" placeholder="Search" list="categoriesList">
                     <section class="category-wrapper flex">
-                        <a class="clean-links" href="">Funny</a>
-                        <a class="clean-links" href="">Animal</a>
-                        <a class="clean-links" href="">Men</a>
-                        <a class="clean-links" href="">Woman</a>
+                        <button class="clean-links category-btn" value="happy">Happy</button>
+                        <button class="clean-links category-btn" value="animal">Animal</button>
+                        <button class="clean-links category-btn" value="men">Men</button>
                     </section>
                     <button class="more-btn">More</button>
                     <button class="random-btn">I'm Flexible</button>
@@ -64,6 +66,9 @@
                     </button>
                     <select class="font-select">
                         <option value="impact">Impact</option>
+                        <option value="Lucida Handwriting">Lucida Handwriting</option>
+                        <option value="arial">Arial</option>
+                        <option value="Times New Roman">timesNRoman</option>
                     </select>
                 </section>
                 <section class="emojis">
